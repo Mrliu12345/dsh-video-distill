@@ -1,0 +1,22 @@
+# 依赖（这个插件刻意零依赖，列在这里是防手滑）
+node_modules/
+
+# 本地转写引擎 / 模型（都在 $DSH_HOME 下，万一有人就地跑过也别提交）
+.venv/
+models/
+
+# 运行数据（同上，正常情况下都在 $DSH_HOME/video-distill/）
+work/
+out/
+logs/
+*.log
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp

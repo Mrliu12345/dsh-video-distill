@@ -1,0 +1,13 @@
+# dsh-video-distill 自带的 loader patch（随包发布，被 package.json 的 dsh.bundle.patch 指到）
+#
+# 作用：插件装进 profile 之后，这一条会被合进 profile 的 loader 树 ——
+#   有它，插件才会被 apply；没有它，`node_modules` 里躺着也只是躺着。
+#
+# 说明：
+#   * `id` 必须等于插件的命名空间（也就是 package.json 的 name 去掉 `dsh-` 前缀）：
+#     `video-distill`。宿主按 id 找设置表单、按 id 记 revision。
+#   * 配置不在这里写死 —— 运行期的真相是 `$DSH_HOME/video-distill/config.json`
+#     （`video_config` 工具读写它，见 README「配置」一节）。
+#     所以这里只需要把插件插进树里。
+- id: video-distill
+  name: dsh-video-distill

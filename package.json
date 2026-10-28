@@ -1,0 +1,55 @@
+{
+  "name": "dsh-video-distill",
+  "version": "0.1.0",
+  "description": "DSH 插件「视频蒸馏」：把指定目录里的视频读进来（口播转写 + 关键帧 + 镜头切点 + 元数据），拆成可复用的结构模板，再生成同款视频文案。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "video",
+    "distill",
+    "asr",
+    "文案"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-video-distill": "tools/cli.mjs"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "lib",
+    "tools",
+    "prompts",
+    "README.md",
+    "AGENTS.md"
+  ],
+  "scripts": {
+    "selftest": "node tools/selftest.mjs",
+    "status": "node tools/cli.mjs status",
+    "guide": "node tools/cli.mjs guide"
+  },
+  "engines": {
+    "dsh": ">=0.1.7-rc.1",
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mrliu12345/dsh-video-distill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mrliu12345/dsh-video-distill/issues"
+  },
+  "homepage": "https://github.com/Mrliu12345/dsh-video-distill#readme"
+}
